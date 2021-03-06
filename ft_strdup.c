@@ -6,7 +6,7 @@
 /*   By: manuel <mlrcbsousa@gmail.com>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/03 22:59:12 by manuel            #+#    #+#             */
-/*   Updated: 2021/03/06 11:51:51 by manuel           ###   ########.fr       */
+/*   Updated: 2021/03/06 12:25:24 by manuel           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ char	*ft_strdup(const char *src)
 {
 	char	*str;
 
-	if (!(str = malloc(sizeof(*src) * (ft_strlen(src) + 1))))
+	if (!(str = (char *)malloc(sizeof(*src) * (ft_strlen(src) + 1))))
 	{
 		errno = ENOMEM;
 		return (NULL);
