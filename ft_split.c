@@ -6,7 +6,7 @@
 /*   By: manuel <mlrcbsousa@gmail.com>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/03 23:22:32 by manuel            #+#    #+#             */
-/*   Updated: 2021/03/10 23:55:16 by manuel           ###   ########.fr       */
+/*   Updated: 2021/03/10 23:58:28 by manuel           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,8 +62,8 @@ char	**ft_split(char const *s, char c)
 		if (!next)
 		{
 			next = (char *)s;
-			while (*next++)
-				;
+			while (*next)
+				next++;
 		}
 		*strs = ft_substr(s, 0, (next - s)); 
 		s = next;
