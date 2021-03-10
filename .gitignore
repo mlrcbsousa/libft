@@ -68,3 +68,4 @@ ft_tolower.o
 ft_toupper.o
 libft.a
 main.c
+a.out

@@ -6,22 +6,70 @@
 /*   By: manuel <mlrcbsousa@gmail.com>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/03 23:22:32 by manuel            #+#    #+#             */
-/*   Updated: 2021/03/10 19:38:58 by manuel           ###   ########.fr       */
+/*   Updated: 2021/03/10 23:55:16 by manuel           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <stdio.h>
 #include "libft.h"
 
-char **ft_split(char const *s, char c)
+int	ft_wordlen(char const *word, char c)
+{
+	int	length;
+
+	length = 0;
+	while (*word && *word != c)
+	{
+		word++;
+		length++;
+	}
+	return (length);
+}
+
+int	ft_wordcount(char const *s, char c)
+{
+	int	wc;
+
+	wc = 0;
+	while (s && *s)
+	{
+		while (*s == c)
+			s++;
+		s = ft_strchr(s, c);
+		if (s)
+			wc++;
+	}
+	printf("%d\n", wc);
+	return (wc);
+}
+
+char	**ft_split(char const *s, char c)
 {
 	char	**strs;
-	char	*buf;
-	int		wc;
+	char	**buf;
+	//int		wl;
+	char	*next;
 
-	if (!s)
+	strs = (char **)malloc((ft_wordcount(s, c) + 1) * sizeof(*strs));
+	if (!strs)
 		return (NULL);
-	wc = 0;
-	while ((buf = ft_strchr(buf, c)))
-		;
-	return ((char **)malloc(1));
+	buf = strs;
+	while (s && *s)
+	{
+		while (*s == c)
+			s++;
+		next = ft_strchr(s, c);
+		if (!next)
+		{
+			next = (char *)s;
+			while (*next++)
+				;
+		}
+		*strs = ft_substr(s, 0, (next - s)); 
+		s = next;
+		strs++;
+	}
+	//strs--;
+	*strs = 0;
+	return (buf);
 }
