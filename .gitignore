@@ -67,3 +67,4 @@ ft_substr.o
 ft_tolower.o
 ft_toupper.o
 libft.a
+main.c
