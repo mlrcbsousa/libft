@@ -6,7 +6,7 @@
 /*   By: manuel <mlrcbsousa@gmail.com>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/03 22:56:52 by manuel            #+#    #+#             */
-/*   Updated: 2021/03/03 22:57:05 by manuel           ###   ########.fr       */
+/*   Updated: 2021/03/11 23:36:10 by manuel           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,6 @@
 
 void	ft_bzero(void *s, size_t n)
 {
-	size_t	i;
-
-	i = 0;
-	while (i < n)
-	{
-		((unsigned char *)s)[i] = '\0';
-		i++;
-	}
+	while (n--)
+		*(unsigned char *)s++ = '\0';
 }
