@@ -6,7 +6,7 @@
 /*   By: manuel <mlrcbsousa@gmail.com>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/03 22:59:42 by manuel            #+#    #+#             */
-/*   Updated: 2021/03/03 22:59:45 by manuel           ###   ########.fr       */
+/*   Updated: 2021/03/11 23:24:57 by manuel           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,19 +14,25 @@
 
 char	*ft_strnstr(const char *s1, const char *s2, size_t n)
 {
-	size_t	i;
-	size_t	j;
+	char	*buf;
 
-	i = 0;
-	j = 0;
-	while (s1[i] && i < n)
+	if (!*s2)
+		return ((char *)s1);
+	while (*s1 && n)
 	{
-		j = 0;
-		while (s1[i + j] && (i + j) < n && s1[i + j] == s2[j])
-			j++;
-		if (s2[j] == '\0')
-			return ((char *)&s1[i]);
-		i++;
+		buf = (char *)s2;
+		if (*s1 == *s2)
+		{
+			while (*s2
+				&& *(s1 + (s2 - buf)) == *s2
+				&& (size_t)(s2 - buf) < n)
+				s2++;
+			if (!*s2)
+				return ((char *)s1);
+			s2 = buf;
+		}
+		n--;
+		s1++;
 	}
 	return (NULL);
 }
