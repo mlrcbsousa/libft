@@ -6,7 +6,7 @@
 /*   By: manuel <mlrcbsousa@gmail.com>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/03 22:50:13 by manuel            #+#    #+#             */
-/*   Updated: 2021/03/03 22:50:15 by manuel           ###   ########.fr       */
+/*   Updated: 2021/03/11 23:44:31 by manuel           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,15 +14,12 @@
 
 void	*ft_memcpy(void *dest, const void *src, size_t n)
 {
-	size_t	i;
+	char	*buf;
 
-	i = 0;
-	if (dest == src || n == 0)
+	if (dest == src || !n)
 		return (dest);
-	while (i < n)
-	{
-		((char*)dest)[i] = ((char*)src)[i];
-		i++;
-	}
-	return (dest);
+	buf = (char *)dest;
+	while (n--)
+		*(char *)dest++ = *(char *)src++;
+	return (buf);
 }
