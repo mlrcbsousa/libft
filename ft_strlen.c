@@ -6,7 +6,7 @@
 /*   By: manuel <mlrcbsousa@gmail.com>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/03 22:59:27 by manuel            #+#    #+#             */
-/*   Updated: 2021/03/03 22:59:29 by manuel           ###   ########.fr       */
+/*   Updated: 2021/03/12 22:30:31 by manuel           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,10 @@
 
 size_t	ft_strlen(const char *str)
 {
-	size_t	i;
+	size_t	length;
 
-	i = 0;
-	while (str[i])
-		i++;
-	return (i);
+	length = 0;
+	while (*str++)
+		length++;
+	return (length);
 }
