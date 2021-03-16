@@ -69,3 +69,4 @@ ft_toupper.o
 libft.a
 main.c
 a.out
+libft.h.gch
