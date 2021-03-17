@@ -6,7 +6,7 @@
 /*   By: manuel <mlrcbsousa@gmail.com>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/03 22:50:53 by manuel            #+#    #+#             */
-/*   Updated: 2021/03/03 22:50:55 by manuel           ###   ########.fr       */
+/*   Updated: 2021/03/17 23:11:22 by manuel           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,6 @@
 
 void	ft_putstr_fd(char const *s, int fd)
 {
-	int	i;
-
-	i = 0;
-	if (s)
-	{
-		while (s[i])
-			ft_putchar_fd(s[i++], fd);
-	}
+	while (*s)
+		ft_putchar_fd(*s++, fd);
 }
