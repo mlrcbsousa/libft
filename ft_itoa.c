@@ -6,55 +6,44 @@
 /*   By: manuel <mlrcbsousa@gmail.com>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/03 22:58:00 by manuel            #+#    #+#             */
-/*   Updated: 2021/03/03 22:58:02 by manuel           ###   ########.fr       */
+/*   Updated: 2021/03/17 22:55:55 by manuel           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static int	ft_magnitude_order(int c)
+size_t	ft_declen(size_t n, size_t len)
 {
-	int	len;
-	int tmp;
-
-	len = 0;
-	tmp = c;
-	while ((c > 0 && tmp > 0) || (c < 0 && tmp < 0))
-	{
-		len++;
-		tmp = tmp / 10;
-	}
+	if (n > 9)
+		return (ft_declen(n / 10, len + 1));
 	return (len);
 }
 
-static int	ft_isnegative(int c)
+void	ft_decstr(char *str, long long n)
 {
-	return (c < 0 ? 1 : 0);
+	if (n > 9)
+		ft_decstr(str - 1, n / 10);
+	*str = n % 10 + 48;
 }
 
-char		*ft_itoa(int n)
+char	*ft_itoa(int n)
 {
-	char	*ito;
-	int		negative;
-	int		magnitude;
+	char		*str;
+	long long	n_ll;
+	size_t		len;
 
-	if (n == -2147483648)
-		return (ft_strdup("-2147483648"));
-	if (n == 0)
-		return (ft_strdup("0"));
-	if ((negative = ft_isnegative(n)))
-		n = -n;
-	magnitude = ft_magnitude_order(n) + negative;
-	if (!(ito = (char*)malloc(sizeof(char) * (magnitude + 1))))
+	n_ll = (long long)n;
+	if (n < 0)
+		n_ll = -n_ll;
+	len = ft_declen(n_ll, 1);
+	if (n < 0)
+		len++;
+	str = (char *)malloc(sizeof(*str) * (len + 1));
+	if (!str)
 		return (NULL);
-	ito[magnitude] = '\0';
-	while (magnitude > 0 && n > 0)
-	{
-		magnitude--;
-		ito[magnitude] = n % 10 + '0';
-		n = n / 10;
-	}
-	if (negative)
-		ito[0] = '-';
-	return (ito);
+	if (n < 0)
+		*str = '-';
+	ft_decstr(str + len - 1, n_ll);
+	*(str + len) = '\0';
+	return (str);
 }
