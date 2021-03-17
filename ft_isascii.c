@@ -6,16 +6,11 @@
 /*   By: manuel <mlrcbsousa@gmail.com>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/03 22:57:24 by manuel            #+#    #+#             */
-/*   Updated: 2021/03/03 22:57:39 by manuel           ###   ########.fr       */
+/*   Updated: 2021/03/17 20:36:31 by manuel           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 int	ft_isascii(int c)
 {
-	int				flag;
-
-	flag = 0;
-	if (c >= 0 && c <= 127)
-		flag = 1;
-	return (flag);
+	return (c >= 0 && c <= 127);
 }
