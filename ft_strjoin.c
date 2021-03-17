@@ -6,33 +6,33 @@
 /*   By: manuel <mlrcbsousa@gmail.com>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/03 22:51:44 by manuel            #+#    #+#             */
-/*   Updated: 2021/03/03 22:52:17 by manuel           ###   ########.fr       */
+/*   Updated: 2021/03/17 21:50:59 by manuel           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
+char	*ft_strcpy(char *dst, const char *src)
+{
+	char	*buf;
+
+	buf = dst;
+	while (*src)
+		*buf++ = *src++;
+	*buf = '\0';
+	return (dst);
+}
+
 char	*ft_strjoin(char const *s1, char const *s2)
 {
-	char	*join;
-	size_t	len;
-	size_t	i;
-	size_t	start;
+	char	*str;
+	size_t	len1;
 
-	join = NULL;
-	i = 0;
-	if (!s1 || !s2)
+	len1 = ft_strlen(s1);
+	str = (char *)malloc(sizeof(*str) * (len1 + ft_strlen(s2) + 1));
+	if (!str)
 		return (NULL);
-	len = ft_strlen(s1) + ft_strlen(s2);
-	if (!(join = (char*)malloc(sizeof(char) * (len + 1))))
-		return (NULL);
-	ft_strcpy(join, s1);
-	start = ft_strlen(s1);
-	while (i + start < len)
-	{
-		join[start + i] = s2[i];
-		i++;
-	}
-	join[start + i] = '\0';
-	return (join);
+	ft_strcpy(str, s1);
+	ft_strcpy(str + len1, s2);
+	return (str);
 }
