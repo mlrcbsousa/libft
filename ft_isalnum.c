@@ -6,7 +6,7 @@
 /*   By: manuel <mlrcbsousa@gmail.com>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/03 22:49:15 by manuel            #+#    #+#             */
-/*   Updated: 2021/03/03 22:49:21 by manuel           ###   ########.fr       */
+/*   Updated: 2021/03/17 20:35:20 by manuel           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,14 +14,5 @@
 
 int	ft_isalnum(int c)
 {
-	int				flag;
-
-	flag = 0;
-	if (c >= 'a' && c <= 'z')
-		flag = 1;
-	else if (c >= 'A' && c <= 'Z')
-		flag = 1;
-	else if (c >= '0' && c <= '9')
-		flag = 1;
-	return (flag);
+	return (ft_isalpha(c) || ft_isdigit(c));
 }
