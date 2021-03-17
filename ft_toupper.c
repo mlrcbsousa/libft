@@ -6,15 +6,13 @@
 /*   By: manuel <mlrcbsousa@gmail.com>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/03 22:53:06 by manuel            #+#    #+#             */
-/*   Updated: 2021/03/03 22:53:07 by manuel           ###   ########.fr       */
+/*   Updated: 2021/03/17 20:40:38 by manuel           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-#include "libft.h"
 
 int	ft_toupper(int c)
 {
 	if (c >= 'a' && c <= 'z')
-		c = c - 32;
+		c -= 32;
 	return (c);
 }
