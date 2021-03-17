@@ -6,7 +6,7 @@
 /*   By: manuel <mlrcbsousa@gmail.com>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/03 22:56:24 by manuel            #+#    #+#             */
-/*   Updated: 2021/03/07 12:17:13 by manuel           ###   ########.fr       */
+/*   Updated: 2021/03/17 21:57:08 by manuel           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 char	*ft_strtrim(char const *s1, char const *set)
 {
-	size_t length;
+	size_t	length;
 
 	if (!s1 || !set)
 		return (NULL);
