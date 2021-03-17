@@ -6,7 +6,7 @@
 /*   By: manuel <mlrcbsousa@gmail.com>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/03 22:53:31 by manuel            #+#    #+#             */
-/*   Updated: 2021/03/17 20:18:29 by manuel           ###   ########.fr       */
+/*   Updated: 2021/03/17 20:21:23 by manuel           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,6 @@ int	ft_atoi(const char *str)
 	if (*str == '-' || *str == '+')
 		str++;
 	while (ft_isdigit(*str))
-		number = (number * 10) + *str++ - '0';
+		number = number * 10 + *str++ - '0';
 	return ((int)(number * sign));
 }
