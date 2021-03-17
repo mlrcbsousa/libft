@@ -6,7 +6,7 @@
 /*   By: manuel <mlrcbsousa@gmail.com>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/03 22:53:31 by manuel            #+#    #+#             */
-/*   Updated: 2021/03/17 20:21:23 by manuel           ###   ########.fr       */
+/*   Updated: 2021/03/17 20:27:56 by manuel           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,8 @@
 
 static int	ft_isspace(char c)
 {
-	if (c == '\f' || c == '\n' || c == '\r'
-		|| c == '\t' || c == '\v' || c == ' ')
-		return (1);
-	return (0);
+	return (c == '\f' || c == '\n' || c == '\r' || c == '\t' || c == '\v'
+		|| c == ' ');
 }
 
 int	ft_atoi(const char *str)
