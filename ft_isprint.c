@@ -6,18 +6,11 @@
 /*   By: manuel <mlrcbsousa@gmail.com>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/03 22:54:08 by manuel            #+#    #+#             */
-/*   Updated: 2021/03/03 22:54:10 by manuel           ###   ########.fr       */
+/*   Updated: 2021/03/17 20:37:50 by manuel           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
-
 int	ft_isprint(int c)
 {
-	int	flag;
-
-	flag = 0;
-	if (c >= 32 && c <= 126)
-		flag = 1;
-	return (flag);
+	return (c >= 32 && c <= 126);
 }
