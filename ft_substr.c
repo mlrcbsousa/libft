@@ -6,7 +6,7 @@
 /*   By: manuel <mlrcbsousa@gmail.com>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/03 23:13:36 by manuel            #+#    #+#             */
-/*   Updated: 2021/03/06 22:17:46 by manuel           ###   ########.fr       */
+/*   Updated: 2021/03/17 20:57:12 by manuel           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
-	char 			*str;
+	char			*str;
 	const char		*save;
 	unsigned int	i;
 
@@ -31,7 +31,8 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 		s++;
 		i++;
 	}
-	if (!(str = (char *)malloc(sizeof(*s) * (i + 1))))
+	str = (char *)malloc(sizeof(*s) * (i + 1));
+	if (!str)
 		return (NULL);
 	ft_strlcpy(str, save, i + 1);
 	return (str);
