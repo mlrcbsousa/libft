@@ -6,7 +6,7 @@
 /*   By: manuel <mlrcbsousa@gmail.com>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/18 00:19:50 by manuel            #+#    #+#             */
-/*   Updated: 2021/03/18 00:55:58 by manuel           ###   ########.fr       */
+/*   Updated: 2021/03/18 22:35:09 by manuel           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,8 +20,7 @@ void ft_lstclear(t_list **lst, void (*del)(void *))
 	{
 		tmp = *lst;
 		*lst = (*lst)->next;
-		del(tmp->content);
-		free(tmp);
+		ft_lstdelone(tmp, del);
 	}
 
 }
