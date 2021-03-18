@@ -33,6 +33,15 @@
 .ft_substr.c.swp
 .ft_tolower.c.swp
 .ft_toupper.c.swp
+.ft_lstadd_back.c.swp
+.ft_lstadd_front.c.swp
+.ft_lstclear.c.swp
+.ft_lstdelone.c.swp
+.ft_lstiter.c.swp
+.ft_lstlast.c.swp
+.ft_lstmap.c.swp
+.ft_lstnew.c.swp
+.ft_lstsize.c.swp
 ft_atoi.o
 ft_bzero.o
 ft_calloc.o
