@@ -6,7 +6,7 @@
 /*   By: manuel <mlrcbsousa@gmail.com>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/03 22:52:48 by manuel            #+#    #+#             */
-/*   Updated: 2021/03/03 22:52:50 by manuel           ###   ########.fr       */
+/*   Updated: 2021/03/18 23:37:29 by manuel           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,16 +14,12 @@
 
 char	*ft_strrchr(const char *str, int c)
 {
-	char	k;
-	char	*s;
-	int		i;
+	int	len;
 
-	k = (char)c;
-	s = (char *)str;
-	i = ft_strlen(s);
-	while (i != 0 && s[i] != k)
-		i--;
-	if (s[i] == k)
-		return (s + i);
+	len = ft_strlen(str);
+	while (len && *(str + len) != (char)c)
+		len--;
+	if (*(str + len) == (char)c)
+		return ((char *)(str + len));
 	return (NULL);
 }
