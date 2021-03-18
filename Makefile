@@ -6,13 +6,14 @@
 #    By: manuel <mlrcbsousa@gmail.com>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/03/03 22:33:22 by manuel            #+#    #+#              #
-#    Updated: 2021/03/03 23:11:21 by manuel           ###   ########.fr        #
+#    Updated: 2021/03/18 01:10:08 by manuel           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 CFLAGS	= -Wall -Wextra -Werror
 CC		= gcc
 RM		= rm -f
+AR		= ar rc
 
 NAME	= libft.a
 
@@ -25,20 +26,27 @@ SRCS	= ft_atoi.c ft_isalpha.c ft_isprint.c ft_memchr.c ft_memmove.c \
 		  ft_isalnum.c ft_isdigit.c ft_memccpy.c ft_memcpy.c ft_putchar_fd.c \
 		  ft_putstr_fd.c ft_strjoin.c ft_strmapi.c ft_strrchr.c ft_toupper.c \
 		  ft_substr.c ft_calloc.c ft_strlcpy.c ft_split.c
+SRCS_B	= ft_lstadd_back.c ft_lstadd_front.c ft_lstclear.c ft_lstdelone.c \
+		  ft_lstiter.c ft_lstlast.c ft_lstmap.c ft_lstnew.c ft_lstsize.c
 
 OBJS	= ${SRCS:.c=.o}
+OBJS_B	= ${SRCS_B:.c=.o}
+
+${NAME}:	${OBJS}
+			${AR} $@ $^
+			ranlib $@
+
+bonus:		${OBJS} ${OBJS_B}
+			${AR} ${NAME} $^
+			ranlib ${NAME}
+
+%.o:%.c		libft.h
+			${CC} ${CFLAGS} -c $< -o $@
 
 all:		${NAME}
 
-%.o:%.c
-			${CC} ${CFLAGS} -c $< -o $@ -I ${INCDIR}
-
-${NAME}:	${OBJS}
-			ar rc ${NAME} ${OBJS}
-			ranlib ${NAME}
-
 clean:
-			${RM} ${OBJS}
+			${RM} ${OBJS} ${OBJS_B}
 
 fclean: 	clean
 			${RM} ${NAME}

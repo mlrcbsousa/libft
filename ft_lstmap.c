@@ -3,34 +3,34 @@
 /*                                                        :::      ::::::::   */
 /*   ft_lstmap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aclecler <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: manuel <mlrcbsousa@gmail.com>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/06/23 16:29:05 by aclecler          #+#    #+#             */
-/*   Updated: 2018/06/23 22:20:43 by aclecler         ###   ########.fr       */
+/*   Created: 2021/03/18 00:54:02 by manuel            #+#    #+#             */
+/*   Updated: 2021/03/18 00:54:04 by manuel           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-t_list	*ft_lstmap(t_list *lst, t_list *(*f) (t_list *elem))
+t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 {
-	t_list	*result;
 	t_list	*first;
-	t_list	*fres;
+	t_list	*new;
 
-	if (!f || !lst)
+	new = ft_lstnew(f(lst->content));
+	if (!new)
 		return (NULL);
-	fres = f(lst);
-	if (!(result = ft_lstnew(fres->content, fres->content_size)))
-		return (NULL);
-	first = result;
+	first = new;
 	lst = lst->next;
 	while (lst)
 	{
-		fres = f(lst);
-		if (!(result->next = ft_lstnew(fres->content, fres->content_size)))
-			return (NULL);
-		result = result->next;
+		new->next = ft_lstnew(f(lst->content));
+		if (!new->next)
+		{
+			ft_lstclear(&first, del);
+			break ;
+		}
+		new = new->next;
 		lst = lst->next;
 	}
 	return (first);
