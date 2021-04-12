@@ -91,3 +91,5 @@ a.out
 libft.h.gch
 .libft.h.swp
 libftTester/
+ft_strcpy_bonus.o
+.ft_strcpy_bonus.c.swp
