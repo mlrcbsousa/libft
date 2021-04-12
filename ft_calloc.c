@@ -6,7 +6,7 @@
 /*   By: manuel <mlrcbsousa@gmail.com>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/03 23:15:14 by manuel            #+#    #+#             */
-/*   Updated: 2021/03/17 20:45:43 by manuel           ###   ########.fr       */
+/*   Updated: 2021/04/12 22:45:59 by msousa           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,6 @@ void	*ft_calloc(size_t nmemb, size_t size)
 		return (NULL);
 	ret = malloc(nmemb * size);
 	if (ret)
-		ft_memset(ret, 0, nmemb * size);
+		ft_bzero(ret, nmemb * size);
 	return (ret);
 }
