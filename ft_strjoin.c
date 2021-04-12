@@ -6,22 +6,11 @@
 /*   By: manuel <mlrcbsousa@gmail.com>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/03 22:51:44 by manuel            #+#    #+#             */
-/*   Updated: 2021/03/17 21:50:59 by manuel           ###   ########.fr       */
+/*   Updated: 2021/04/12 15:09:54 by msousa           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-
-char	*ft_strcpy(char *dst, const char *src)
-{
-	char	*buf;
-
-	buf = dst;
-	while (*src)
-		*buf++ = *src++;
-	*buf = '\0';
-	return (dst);
-}
 
 char	*ft_strjoin(char const *s1, char const *s2)
 {
