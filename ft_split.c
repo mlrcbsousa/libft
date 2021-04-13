@@ -6,7 +6,7 @@
 /*   By: msousa <mlrcbsousa@gmail.com>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/12 23:08:11 by msousa            #+#    #+#             */
-/*   Updated: 2021/04/12 23:08:19 by msousa           ###   ########.fr       */
+/*   Updated: 2021/04/13 17:14:42 by msousa           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,6 +48,8 @@ char	**ft_split(char const *s, char c)
 	char	**strs;
 	char	**buf;
 
+	if (!s)
+		return (NULL);
 	strs = (char **)malloc((ft_wordcount(s, c) + 1) * sizeof(*strs));
 	if (!strs)
 		return (NULL);
