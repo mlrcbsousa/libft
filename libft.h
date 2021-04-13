@@ -6,7 +6,7 @@
 /*   By: manuel <mlrcbsousa@gmail.com>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/02 23:15:21 by manuel            #+#    #+#             */
-/*   Updated: 2021/04/12 15:11:44 by msousa           ###   ########.fr       */
+/*   Updated: 2021/04/13 14:04:58 by msousa           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -86,4 +86,6 @@ t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *));
 // Others
 
 char	*ft_strcpy(char *dst, const char *src);
+int		ft_isspace(char c);
+
 #endif

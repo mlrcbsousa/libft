@@ -93,3 +93,5 @@ libft.h.gch
 libftTester/
 ft_strcpy_bonus.o
 .ft_strcpy_bonus.c.swp
+.ft_isspace_bonus.c.swp
+ft_isspace_bonus.o
