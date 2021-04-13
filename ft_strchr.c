@@ -6,7 +6,7 @@
 /*   By: msousa <mlrcbsousa@gmail.com>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/12 23:08:30 by msousa            #+#    #+#             */
-/*   Updated: 2021/04/12 23:08:41 by msousa           ###   ########.fr       */
+/*   Updated: 2021/04/13 16:44:11 by msousa           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,6 @@
 
 char	*ft_strchr(const char *str, int c)
 {
-	if (!str)
-		return (NULL);
 	while (*str)
 		if (*str++ == (char)c)
 			return ((char *)(str - 1));
