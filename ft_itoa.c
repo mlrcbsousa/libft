@@ -6,20 +6,20 @@
 /*   By: msousa <mlrcbsousa@gmail.com>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/12 22:51:13 by msousa            #+#    #+#             */
-/*   Updated: 2021/04/12 22:51:31 by msousa           ###   ########.fr       */
+/*   Updated: 2021/04/14 18:46:03 by msousa           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_declen(size_t n, size_t len)
+static size_t	ft_declen(size_t n, size_t len)
 {
 	if (n > 9)
 		return (ft_declen(n / 10, len + 1));
 	return (len);
 }
 
-void	ft_decstr(char *str, long long n)
+static void	ft_decstr(char *str, long long n)
 {
 	if (n > 9)
 		ft_decstr(str - 1, n / 10);

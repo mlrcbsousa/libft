@@ -6,13 +6,13 @@
 /*   By: msousa <mlrcbsousa@gmail.com>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/12 23:08:11 by msousa            #+#    #+#             */
-/*   Updated: 2021/04/13 17:14:42 by msousa           ###   ########.fr       */
+/*   Updated: 2021/04/14 18:47:34 by msousa           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_wordcount(char const *s, char c)
+static int	ft_wordcount(char const *s, char c)
 {
 	int	wc;
 
@@ -28,7 +28,7 @@ int	ft_wordcount(char const *s, char c)
 	return (wc);
 }
 
-char	*ft_wordcopy(char const *s, char c, char **strs)
+static char	*ft_wordcopy(char const *s, char c, char **strs)
 {
 	char	*next;
 
